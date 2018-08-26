@@ -1,0 +1,54 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<form asp-controller="Users" asp-action="Edit">
+    <br />
+    <h2>Edit Customers</h2>
+    <hr />
+    <br />
+    <div style="height:60px;">
+        <div class="col-sm-3" style="padding-top:20px;">
+            @*<div class="btn btn-primary" style="width:200px;">
+                <span class="glyphicon glyphicon-save"></span>&nbsp; Save Changes
+            </div>*@
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-sm btn-primary" />
+                <a asp-action="Index" class="btn btn-sm btn-success">Back to List</a>
+            </div>
+
+
+        </div>
+    </div>
+    <br />
+    <hr />
+    <div class="form-group">
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.LastName)
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => m.Email)
+                </td>
+                <td>
+                    <input asp-for="FirstName" class="form-control" />
+                </td>
+                <td>
+                    <input asp-for="LastName" class="form-control" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>

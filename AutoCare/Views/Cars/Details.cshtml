@@ -1,0 +1,85 @@
+﻿@model AutoCare.Models.Car
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Add Car</h2>
+<form asp-action="Details">
+    <div class="form-border">
+        <fieldset disabled>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="VIN" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="VIN" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Make" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Make" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Model" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Model" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Year" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-1">
+                        <input asp-for="Year" class="form-control" />
+                    </div>
+
+                    <div class="col-sm-1">
+                        <label asp-for="Style" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-2">
+                        <input asp-for="Style" class="form-control" />
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Miles" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Miles" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <label asp-for="Color" class="custom-label"></label>
+                    </div>
+                    <div class="col-sm-4">
+                        <input asp-for="Color" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <a asp-action="Index" asp-route-userId="@Model.UserId" class="btn btn-sm btn-success">Back to List</a>
+        </div>
+    </div>
+    <input asp-for="UserId" type="hidden" />
+</form>
+

@@ -1,0 +1,25 @@
+﻿@model AutoCare.Models.ViewModel.CarAndServicesViewModel
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<br />
+@Html.Partial("_CarDetailsInService")
+<h4>Service History</h4>
+<div class="row form-border">
+    @Html.Partial("_DisplayPastServices", Model)
+    <div class="row">
+        @if (Model.PastServicesObj.Count() == 0)
+        {
+            <div class="col-sm-12 text-primary" style="padding-bottom:20px;">No past service records found!</div>
+
+        }
+        <div class="col-sm-3">
+            <input type="button" class="btn btn-sm btn-primary" value="Print" onclick="window.print();" />
+            <a asp-controller="Cars" asp-action="Index" asp-route-userId="@Model.CarObj.UserId" class="btn btn-sm btn-success">Back to List</a>
+        </div>
+    </div>
+</div>

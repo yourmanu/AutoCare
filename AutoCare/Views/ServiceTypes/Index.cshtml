@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AutoCare.Models.ServiceType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Manage Service Type</h2>
+<br/>
+<div class="form-border">
+    <p>
+        <a class="btn btn-sm btn-primary" asp-action="Create">
+        <span class="glyphicon glyphicon-plus"></span>&nbsp;Add Service Type
+        </a>
+    </p>
+    <br />
+
+    <table class="table table-hover table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m=>item.Name)</td>
+                <td>
+                    @Html.Partial("_TableButtonPartial",new IndividualButtonPartial { ServiceId=item.ServicetypeId})
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
